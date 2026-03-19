@@ -8,7 +8,6 @@ public class Sedex implements Frete {
     private static final double VALOR_BASE_ACIMA_1000g = 46.5;
     private static final double VALOR_ADICIONAL_POR_100g = 1.5;
     private static final double PESO_POR_UNIDADE_ADICIONAL = 100.0;
-
     private final double peso;
 
     public Sedex(double peso) {
