@@ -34,10 +34,13 @@ class BolsaTest {
 
         bolsa2.registrarObservador(investidorTeste);
 
-        bolsa2.registrarOrdem(new Ordem("Vendedor", TipoOrdem.VENDA, 35.0));
+        Investidor investidor = new Investidor("Inventidor");
+        Investidor comprador = new Investidor("Comprador");
+
+        bolsa2.registrarOrdem(new Ordem(investidor, TipoOrdem.VENDA, 35.0));
         assertFalse(notificacaoRecebida[0], "Não deve notificar antes do match");
 
-        bolsa2.registrarOrdem(new Ordem("Comprador", TipoOrdem.COMPRA, 35.0));
+        bolsa2.registrarOrdem(new Ordem(comprador, TipoOrdem.COMPRA, 35.0));
 
         assertTrue(notificacaoRecebida[0], "O investidor deveria ter sido notificado da mudança de preço");
         assertEquals(35.0, bolsa2.getValorAtual());

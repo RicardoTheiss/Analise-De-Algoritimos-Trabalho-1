@@ -12,6 +12,6 @@ public class Investidor implements Observador {
     }
 
     public void colocarOrdem(Acao acao, TipoOrdem tipo, double valor) {
-        acao.registrarOrdem(new Ordem(this.nome, tipo, valor));
+        acao.registrarOrdem(new Ordem(this, tipo, valor));
     }
 }
